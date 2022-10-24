@@ -1,0 +1,68 @@
+const app = require("fastify")();
+const { incrementCounter, getCounter } = require("./counter");
+const { getCountBadge } = require("./badge");
+
+const GITHUB_REPO = "https://github.com/kerolloz/kounter";
+
+app.get("/", async (_, reply) => reply.redirect(GITHUB_REPO));
+
+// Returns (without incrementing) the current count of the key
+app.get("/count/:key", async (request, reply) => {
+  const { key } = request.params;
+  if (!key) {
+    return reply.status(400).send({
+      statusCode: 400,
+      error: "Bad Request",
+      message: "Key is required",
+    });
+  }
+  return getCounter(key);
+});
+
+// Returns a shields.io SVG image with the incremented count of the key
+app.get("/badge/:key", async (request, reply) => {
+  const { key } = request.params;
+  if (!key) {
+    return reply.status(400).send({
+      statusCode: 400,
+      error: "Bad Request",
+      message: "Key is required",
+    });
+  }
+  const { count } = await incrementCounter(key);
+  const {
+    style = "flat",
+    label = key,
+    labelColor = "",
+    color = "",
+    cntPrefix = "",
+    cntSuffix = "",
+  } = request.query;
+
+  try {
+    const badge = getCountBadge({
+      style,
+      label,
+      labelColor,
+      color,
+      message: cntPrefix + count + cntSuffix,
+    });
+
+    reply
+      .code(200)
+      .headers({
+        "Content-Type": "image/svg+xml",
+        "Cache-Control": "max-age=0, no-cache, no-store, must-revalidate",
+      })
+      .send(badge);
+  } catch (err) {
+    reply.status(400).send({
+      statusCode: 400,
+      error: "Bad Request",
+      message: err.message,
+    });
+  }
+});
+
+// no need for `app.listen()` on Deta, we run the app automatically.
+module.exports = app; // make sure to export your `app` instance.

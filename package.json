@@ -1,0 +1,17 @@
+{
+  "name": "counter-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "badge-maker": "^3.3.1",
+    "deta": "^1.1.0",
+    "fastify": "^4.9.2"
+  }
+}
