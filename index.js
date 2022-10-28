@@ -7,7 +7,7 @@ const GITHUB_REPO = "https://github.com/kerolloz/kounter";
 app.get("/", async (_, reply) => reply.redirect(GITHUB_REPO));
 
 // Returns (without incrementing) the current count of the key
-app.get("/count/:key", async (request, reply) => {
+app.get("/count/:key", (request, reply) => {
   const { key } = request.params;
   if (!key) {
     return reply.status(400).send({
@@ -29,7 +29,6 @@ app.get("/badge/:key", async (request, reply) => {
       message: "Key is required",
     });
   }
-  const { count } = await incrementCounter(key);
   const {
     style = "flat",
     label = key,
@@ -37,7 +36,12 @@ app.get("/badge/:key", async (request, reply) => {
     color = "",
     cntPrefix = "",
     cntSuffix = "",
+    silent = false,
   } = request.query;
+
+  const { count } = await (silent == "true"
+    ? getCounter(key) // Don't increment the counter
+    : incrementCounter(key));
 
   try {
     const badge = getCountBadge({

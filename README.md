@@ -36,6 +36,7 @@ Redirects to this repository.
 
 ##### Query Parameters
 
+- `silent` - Set to `true` to **disable incrementing** the counter. Defaults to `false`.
 - `style` - Set the style of the badge. Can be one of `flat`, `flat-square`, `for-the-badge`, or `plastic`. Defaults to `flat`.
 - `label` - Set the left-hand-side text. Defaults to `:key`.
 - `color` - Set background of the right part (hex, rgb, rgba, hsl, hsla and css named colors supported). Defaults to `brightgreen`.
@@ -48,14 +49,14 @@ Redirects to this repository.
 > `![badge](https://kounter.tk/badge/kerolloz.kounter)`  
 > ![badge](https://kounter.tk/badge/kerolloz.kounter)
 
-> `![badge](https://kounter.tk/badge/kerolloz.kounter?style=flat-square&color=blue)`  
-> ![badge](https://kounter.tk/badge/kerolloz.kounter?style=flat-square&color=blue)  
+> `![badge](https://kounter.tk/badge/kerolloz.kounter?style=flat-square&color=blue&silent=true)`  
+> ![badge](https://kounter.tk/badge/kerolloz.kounter?style=flat-square&color=blue&silent=true)  
 
-> `![badge](https://kounter.tk/badge/kerolloz.kounter?label=kerolloz/kounter&labelColor=white&cntPrefix=visits%20)`  
-> ![badge](https://kounter.tk/badge/kerolloz.kounter?label=kerolloz/kounter&labelColor=white&cntPrefix=visits%20)
+> `![badge](https://kounter.tk/badge/kerolloz.kounter?label=kerolloz/kounter&labelColor=white&cntPrefix=visits%20&silent=true)`  
+> ![badge](https://kounter.tk/badge/kerolloz.kounter?label=kerolloz/kounter&labelColor=white&cntPrefix=visits%20&silent=true)
 
-> `![badge](https://kounter.tk/badge/kerolloz.kounter?label=&color=cyan&style=for-the-badge&cntSuffix=%20Views)`  
-> ![badge](https://kounter.tk/badge/kerolloz.kounter?label=&color=cyan&style=for-the-badge&cntSuffix=%20Views)
+> `![badge](https://kounter.tk/badge/kerolloz.kounter?label=&color=333&style=for-the-badge&cntSuffix=%20Views&silent=true)`  
+> ![badge](https://kounter.tk/badge/kerolloz.kounter?label=&color=333&style=for-the-badge&cntSuffix=%20Views&silent=true)
 
 ---
 
@@ -66,7 +67,7 @@ Redirects to this repository.
 </a>
 
 - Returns the current count for `:key` **without incrementing** it.
-- Returns `null` if the counter `:key` does not exist.
+- Returns `{ key: ":key", count: 0 }` if the counter `:key` does not exist.
 
 ##### Parameters
 

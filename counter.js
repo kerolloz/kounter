@@ -4,12 +4,12 @@ const deta = Deta();
 const db = deta.Base("counters-db");
 
 async function incrementCounter(key) {
-  const counter = (await getCounter(key)) || { key, count: 0 };
+  const counter = await getCounter(key);
   counter.count++;
   return db.put(counter);
 }
 
-const getCounter = (key) => db.get(key);
+const getCounter = async (key) => (await db.get(key)) || { key, count: 0 };
 
 module.exports = {
   getCounter,
