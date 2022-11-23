@@ -12,6 +12,6 @@
   "dependencies": {
     "badge-maker": "^3.3.1",
     "deta": "^1.1.0",
-    "fastify": "^4.9.2"
+    "fastify": "^4.10.2"
   }
 }
