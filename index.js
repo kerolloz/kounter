@@ -68,5 +68,10 @@ app.get("/badge/:key", async (request, reply) => {
   }
 });
 
-// no need for `app.listen()` on Deta, we run the app automatically.
-module.exports = app; // make sure to export your `app` instance.
+app.listen({ port: process.env.PORT || 3000 }, (err) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+  console.log(`Server listening on port ${process.env.PORT || 3000}`);
+});
