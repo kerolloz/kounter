@@ -12,7 +12,9 @@ Use cases include a profile views counter, repository visits counter, or just an
 
 ## Docs
 
-Kounter is built using _Fastify_ and is designed to run on _Deta_.  
+You need to set `DETA_PROJECT_KEY` environment variable to your Deta project key.
+
+Kounter is built using _Fastify_.  
 It has a starightforward API with the following few endpoints.
 
 ### Endpoints

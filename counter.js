@@ -1,5 +1,5 @@
 const { Deta } = require("deta");
-const deta = Deta();
+const deta = Deta(process.env.DETA_PROJECT_KEY);
 
 const db = deta.Base("counters-db");
 
