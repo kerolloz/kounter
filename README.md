@@ -2,8 +2,8 @@
 <a target="_blank" href="https://fastify.io">
   <img alt="fastify" align="right" src="https://t.ly/0o1a"/>
 </a>
-<a target="_blank" href="https://deta.sh">
-  <img alt="Deta" align="right" src="https://t.ly/-g08" />
+<a target="_blank" href="https://railway.app/">
+  <img alt="Railway" align="right" src="https://t.ly/f5Sa" />
 </a>
 </h1>
 
@@ -85,17 +85,3 @@ $ curl -X GET https://kounter.tk/count/xyz
   "key": "xyz"
 }
 ```
-
----
-
-### Deployment
-
-Kounter is powered by [Deta](https://deta.sh).
-You are more than welcome to use my version at <https://kounter.tk>.
-
-Also feel free to deploy it to your own Deta account by clicking the button below.  
-<a href="https://go.deta.dev/deploy?repo=https://github.com/kerolloz/kounter">
-  <img width="15%" alt="Deta Deploy Button" src="https://button.deta.dev/1/svg" />
-</a>
-
-<sub>This service is provided for free thanks to [Deta Micros](https://docs.deta.sh/docs/micros/about) and [Deta Base](https://docs.deta.sh/docs/base/about).</sub>
