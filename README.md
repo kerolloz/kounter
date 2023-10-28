@@ -19,7 +19,7 @@ It has a starightforward API with the following few endpoints.
 
 ### Endpoints
 
-> Base URL: <https://kounter.tk>
+> Base URL: <https://kounter.kerolloz.dev>
 
 #### GET `/`
 
@@ -48,17 +48,17 @@ Redirects to this repository.
 
 ##### Examples
 
-> `![badge](https://kounter.tk/badge/kerolloz.kounter)`  
-> ![badge](https://kounter.tk/badge/kerolloz.kounter)
+> `![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter)`  
+> ![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter)
 
-> `![badge](https://kounter.tk/badge/kerolloz.kounter?style=flat-square&color=blue&silent=true)`  
-> ![badge](https://kounter.tk/badge/kerolloz.kounter?style=flat-square&color=blue&silent=true)  
+> `![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter?style=flat-square&color=blue&silent=true)`  
+> ![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter?style=flat-square&color=blue&silent=true)  
 
-> `![badge](https://kounter.tk/badge/kerolloz.kounter?label=kerolloz/kounter&labelColor=white&cntPrefix=visits%20&silent=true)`  
-> ![badge](https://kounter.tk/badge/kerolloz.kounter?label=kerolloz/kounter&labelColor=white&cntPrefix=visits%20&silent=true)
+> `![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter?label=kerolloz/kounter&labelColor=white&cntPrefix=visits%20&silent=true)`  
+> ![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter?label=kerolloz/kounter&labelColor=white&cntPrefix=visits%20&silent=true)
 
-> `![badge](https://kounter.tk/badge/kerolloz.kounter?label=&color=333&style=for-the-badge&cntSuffix=%20Views&silent=true)`  
-> ![badge](https://kounter.tk/badge/kerolloz.kounter?label=&color=333&style=for-the-badge&cntSuffix=%20Views&silent=true)
+> `![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter?label=&color=333&style=for-the-badge&cntSuffix=%20Views&silent=true)`  
+> ![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter?label=&color=333&style=for-the-badge&cntSuffix=%20Views&silent=true)
 
 ---
 
@@ -78,7 +78,7 @@ Redirects to this repository.
 ##### Example
 
 ```bash
-$ curl -X GET https://kounter.tk/count/xyz
+$ curl -X GET https://kounter.kerolloz.dev/count/xyz
 
 {
   "count": 1,
