@@ -1,9 +1,9 @@
 <h1 align="left">Kounter 🧮
 <a target="_blank" href="https://fastify.io">
-  <img alt="fastify" align="right" src="https://t.ly/0o1a"/>
+  <img alt="fastify" align="right" src="https://img.shields.io/static/v1?logo=fastify&label=&message=Fastify&style=for-the-badge&color=grey"/>
 </a>
 <a target="_blank" href="https://railway.app/">
-  <img alt="Railway" align="right" src="https://t.ly/f5Sa" />
+  <img alt="Railway" align="right" src="https://img.shields.io/static/v1?label=&message=Railway&style=for-the-badge&color=grey&logo=railway" />
 </a>
 </h1>
 
