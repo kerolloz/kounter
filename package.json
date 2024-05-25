@@ -2,9 +2,11 @@
   "name": "counter-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "bun .",
+    "dev": "bun . --watch",
+    "lint": "biome ci ."
   },
   "keywords": [],
   "author": "",
@@ -12,15 +14,14 @@
   "dependencies": {
     "badge-maker": "^3.3.1",
     "deta": "^2.0.0",
-    "fastify": "^4.27.0"
+    "fastify": "^4.27.0",
+    "fastify-type-provider-zod": "^1.2.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.3",
-    "ts-migrate": "^0.1.35",
-    "tsc": "^2.0.4",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "@types/bun": "latest"
   },
-  "trustedDependencies": [
-    "@biomejs/biome"
-  ]
+  "trustedDependencies": ["@biomejs/biome"]
 }

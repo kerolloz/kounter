@@ -1,18 +1,25 @@
 <h1 align="left">Kounter 🧮
-<a target="_blank" href="https://fastify.io">
-  <img alt="fastify" align="right" src="https://img.shields.io/static/v1?logo=fastify&label=&message=Fastify&style=for-the-badge&color=grey"/>
-</a>
-<a target="_blank" href="https://railway.app/">
-  <img alt="Railway" align="right" src="https://img.shields.io/static/v1?label=&message=Railway&style=for-the-badge&color=grey&logo=railway" />
-</a>
+  <a target="_blank" href="https://fastify.io">
+    <img alt="fastify" align="right" src="https://img.shields.io/static/v1?logo=fastify&label=&message=Fastify&style=for-the-badge&color=grey"/>
+  </a>
+  <a target="_blank" href="https://railway.app/">
+    <img alt="Railway" align="right" src="https://img.shields.io/static/v1?label=&message=Railway&style=for-the-badge&color=grey&logo=railway" />
+  </a>
 </h1>
 
 Kounter is a simple counter service that can be used in a variety of ways.  
 Use cases include a profile views counter, repository visits counter, or just anything you want to count.
 
-## Docs
+## Development
 
-You need to set `DETA_PROJECT_KEY` environment variable to your Deta project key.
+For development, you'll need to set `DETA_PROJECT_KEY` environment variable to your Deta project key.  
+This project uses [Bun](bun.sh) for development.
+
+```bash
+bun dev
+```
+
+## Docs
 
 Kounter is built using _Fastify_.  
 It has a starightforward API with the following few endpoints.
