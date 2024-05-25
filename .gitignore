@@ -2,3 +2,5 @@ node_modules/
 .deta/
 
 .space
+package-lock.json
+bun.lockb
