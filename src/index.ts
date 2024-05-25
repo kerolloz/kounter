@@ -82,7 +82,7 @@ app.setErrorHandler((error, _, reply) =>
     : reply.send(error),
 );
 
-app.listen({ port: +(process.env.PORT ?? 3000) }, (err, address) => {
+app.listen({ port: +(process.env.PORT ?? 3000), host: '::' }, (err, address) => {
   if (err) {
     console.error(err);
     process.exit(1);
