@@ -12,6 +12,10 @@ import { keyCountPair, kounterRequestSchema } from './types';
 
 const app = fastify();
 
+app.get('/', async (_, reply) =>
+  reply.redirect('https://github.com/kerolloz/kounter'),
+);
+
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
@@ -24,9 +28,6 @@ app.setErrorHandler((error, _, reply) =>
 );
 
 app.after(() => {
-  app.get('/', async (_, reply) =>
-    reply.redirect('https://github.com/kerolloz/kounter'),
-  );
   app.withTypeProvider<ZodTypeProvider>().route({
     method: 'GET',
     url: '/count/:key',
