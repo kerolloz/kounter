@@ -24,6 +24,9 @@ bun dev
 Kounter is built using _Fastify_.  
 It has a starightforward API with the following few endpoints.
 
+> [!NOTE]
+> You can also check the Swagger [API documentation](https://kounter.kerolloz.dev/swagger) for more details.
+
 ### Endpoints
 
 > Base URL: <https://kounter.kerolloz.dev>

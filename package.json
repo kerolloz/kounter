@@ -5,13 +5,15 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "bun .",
-    "dev": "bun . --watch",
+    "dev": "bun --watch .",
     "lint": "biome ci ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/swagger": "^8.14.0",
+    "@fastify/swagger-ui": "^3.0.0",
     "badge-maker": "^3.3.1",
     "deta": "^2.0.0",
     "fastify": "^4.27.0",

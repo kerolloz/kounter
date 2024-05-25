@@ -1,6 +1,5 @@
 import { Deta } from 'deta';
-
-type KountKeyPair = { key: string; count: number };
+import type { TKeyCountPair } from './types';
 
 class CounterDatabase {
   private deta;
@@ -11,7 +10,7 @@ class CounterDatabase {
     this.db = this.deta.Base(databaseName);
   }
 
-  private validateValue(value: Record<string, unknown>): value is KountKeyPair {
+  private validateValue(value: Record<string, unknown>): value is TKeyCountPair {
     return (
       typeof value === 'object' &&
       typeof value.key === 'string' &&
@@ -19,14 +18,14 @@ class CounterDatabase {
     );
   }
 
-  async incrementCount(key: string): Promise<KountKeyPair> {
+  async incrementCount(key: string): Promise<TKeyCountPair> {
     const value = await this.getCount(key);
     ++value.count;
     await this.db.put(value);
     return value;
   }
 
-  async getCount(key: string): Promise<KountKeyPair> {
+  async getCount(key: string): Promise<TKeyCountPair> {
     const value = (await this.db.get(key)) ?? { key, count: 0 };
     if (!this.validateValue(value)) {
       throw new Error('Corrupted key!');
