@@ -11,7 +11,16 @@
   "license": "ISC",
   "dependencies": {
     "badge-maker": "^3.3.1",
-    "deta": "^1.1.0",
-    "fastify": "^4.10.2"
-  }
+    "deta": "^2.0.0",
+    "fastify": "^4.27.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.3",
+    "ts-migrate": "^0.1.35",
+    "tsc": "^2.0.4",
+    "typescript": "^5.4.5"
+  },
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
 }
