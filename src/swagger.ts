@@ -8,7 +8,8 @@ export const registerSwagger = (app: FastifyInstance) => {
     openapi: {
       info: {
         title: 'Kounter',
-        description: 'Kounter is a simple counter service that can be used in a variety of ways.',
+        description:
+          'Kounter is a simple counter service that can be used in a variety of ways.',
         contact: {
           name: 'Kerollos Magdy',
           url: 'https://kounter.kerolloz.dev',

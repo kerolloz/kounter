@@ -10,7 +10,9 @@ class CounterDatabase {
     this.db = this.deta.Base(databaseName);
   }
 
-  private validateValue(value: Record<string, unknown>): value is TKeyCountPair {
+  private validateValue(
+    value: Record<string, unknown>,
+  ): value is TKeyCountPair {
     return (
       typeof value === 'object' &&
       typeof value.key === 'string' &&
