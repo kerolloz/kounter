@@ -1,5 +1,5 @@
 {
-  "name": "counter-api",
+  "name": "kounter",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",
@@ -9,7 +9,7 @@
     "lint": "biome ci ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Kerollos Magdy <contact@kerolloz.dev>",
   "license": "ISC",
   "dependencies": {
     "@fastify/swagger": "^8.14.0",
