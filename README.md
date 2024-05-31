@@ -7,12 +7,12 @@
   </a>
 </h1>
 
-Kounter is a simple counter service that can be used in a variety of ways.  
-Use cases include a profile views counter, repository visits counter, or just anything you want to count.
+Kounter is a simple counter service that can be used in various ways.  
+Use cases include a profile views counter, repository visits counter, or anything you want to count.
 
 ## Development
 
-For development, you'll need to set `DETA_PROJECT_KEY` environment variable to your Deta project key.  
+For development, you must set the `DETA_PROJECT_KEY` environment variable to your Deta project key.  
 This project uses [Bun](bun.sh) for development.
 
 ```bash
@@ -22,7 +22,7 @@ bun dev
 ## Docs
 
 Kounter is built using _Fastify_.  
-It has a starightforward API with the following few endpoints.
+It has a straightforward API with the following few endpoints.
 
 > [!NOTE]
 > You can also check the Swagger [API documentation](https://kounter.kerolloz.dev/swagger) for more details.
@@ -51,8 +51,8 @@ Redirects to this repository.
 - `silent` - Set to `true` to **disable incrementing** the counter. Defaults to `false`.
 - `style` - Set the style of the badge. Can be one of `flat`, `flat-square`, `for-the-badge`, or `plastic`. Defaults to `flat`.
 - `label` - Set the left-hand-side text. Defaults to `:key`.
-- `color` - Set background of the right part (hex, rgb, rgba, hsl, hsla and css named colors supported). Defaults to `brightgreen`.
-- `labelColor` -  Set background of the left part (hex, rgb, rgba, hsl, hsla and css named colors supported). Defaults to `grey`.
+- `color` - Set the background of the right part (hex, rgb, rgba, hsl, hsla and css named colors supported). Defaults to `brightgreen`.
+- `labelColor` -  Set the background of the left part (hex, rgb, rgba, hsl, hsla and css named colors supported). Defaults to `grey`.
 - `cntPrefix` - Set prefix to display before the counter value. Defaults to `""` empty string.
 - `cntSuffix` - Set suffix to display after the counter value. Defaults to `""` empty string.
 
