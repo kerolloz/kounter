@@ -83,7 +83,7 @@ app.after(() => {
 });
 
 app.listen(
-  { port: +(process.env.PORT ?? 3000), host: '::' },
+  { port: +(process.env.PORT ?? 3000), host: '0.0.0.0' },
   (err, address) => {
     if (err) {
       console.error(err);
