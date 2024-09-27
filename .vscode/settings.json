@@ -3,8 +3,10 @@
     "source.organizeImports.biome": "explicit",
     "quickfix.biome": "explicit"
   },
-  "[javascript]": {
+  "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "cSpell.words": ["Logtail"]
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
 }

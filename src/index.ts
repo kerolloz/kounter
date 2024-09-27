@@ -5,8 +5,8 @@ import {
   validatorCompiler,
 } from 'fastify-type-provider-zod';
 import { ZodError } from 'zod';
+import { counterDb } from './CounterDatabase';
 import { createCountBadge } from './badge';
-import { counterDb } from './counter';
 import { registerSwagger } from './swagger';
 import { keyCountPair, kounterRequestSchema } from './types';
 
