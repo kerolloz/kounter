@@ -1,28 +1,39 @@
 {
   "compilerOptions": {
-    // Enable latest features
-    "lib": ["ESNext"],
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleDetection": "force",
+    /* Basic Options */
+    "target": "ES2020",                          // Target latest ECMAScript version supported by Node.js
+    "module": "ESNext",                          // Use ECMAScript modules
+    "lib": ["ES2020"],                           // Use the library for ES2020
+    "moduleResolution": "node",                  // Resolve modules using Node.js' module resolution
+    "esModuleInterop": true,                     // Enables `import` of CommonJS modules
+    "skipLibCheck": true,                        // Skip type checking of all declaration files
+    "forceConsistentCasingInFileNames": true,    // Ensure consistent casing in imports
+    "resolveJsonModule": true,                   // Enable importing `.json` modules
 
-    //source
-    "outDir": "dist",
-    "rootDir": "src",
+    /* Strict Type-Checking Options */
+    "strict": true,                              // Enable all strict type checking options
+    "noImplicitAny": true,                       // Raise error on expressions and declarations with an implied `any` type
+    "strictNullChecks": true,                    // Ensure `null` and `undefined` are handled correctly
+    "strictFunctionTypes": true,                 // Ensure function type compatibility is stricter
+    "strictBindCallApply": true,                 // Ensure `bind`, `call`, and `apply` methods are correctly typed
+    "strictPropertyInitialization": true,        // Ensure class properties are initialized correctly
+    "noImplicitThis": true,                      // Raise error when `this` is of type `any`
+    "alwaysStrict": true,                        // Parse in strict mode and emit `"use strict"` for each file
 
-    // Bundler mode
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
+    /* Additional Checks */
+    "noUnusedLocals": true,                      // Report errors on unused locals
+    "noUnusedParameters": true,                  // Report errors on unused parameters
+    "noImplicitReturns": true,                   // Ensure all code paths in a function return a value
+    "noFallthroughCasesInSwitch": true,          // Report errors for fallthrough cases in `switch` statements
 
-    // Best practices
-    "strict": true,
-    "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true,
+    "outDir": "./dist",                          // Redirect output structure to the `dist` folder
+    "rootDir": "./src",                          // Specify the root folder for the source files
+    "removeComments": true,                      // Remove comments in the output
 
-    // Some stricter flags
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
-  }
+    /* Experimental Options */
+    "experimentalDecorators": true,              // Enable experimental decorators support
+    "emitDecoratorMetadata": true                // Emit metadata for decorators
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]            // Exclude unnecessary directories
 }
