@@ -11,7 +11,7 @@ const MONGO_URL =
 const connection = await MongoClient.connect(MONGO_URL);
 
 const papr = new Papr();
-papr.initialize(connection.db());
+papr.initialize(connection.db('kounter'));
 
 const CountModel = papr.model(
   'counters',
