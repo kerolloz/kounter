@@ -8,7 +8,9 @@ const MONGO_URL =
     throw new Error('No DATABASE_URL found');
   })();
 
+console.log('Connecting to MongoDB:', MONGO_URL);
 const connection = await MongoClient.connect(MONGO_URL);
+console.log('Connected to MongoDB');
 
 const papr = new Papr();
 papr.initialize(connection.db('kounter'));
