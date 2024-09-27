@@ -82,11 +82,14 @@ app.after(() => {
   });
 });
 
-app.listen({ port: +(process.env.PORT ?? 3000) }, (err, address) => {
-  if (err) {
-    console.error('Failed to start server');
-    console.log(JSON.stringify(err, null, 2));
-    process.exit(1);
-  }
-  console.log(`Server listening at ${address}`);
-});
+app.listen(
+  { host: '::', port: +(process.env.PORT ?? 3000) },
+  (err, address) => {
+    if (err) {
+      console.error('Failed to start server');
+      console.log(JSON.stringify(err, null, 2));
+      process.exit(1);
+    }
+    console.log(`Server listening at ${address}`);
+  },
+);
