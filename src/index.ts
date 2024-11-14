@@ -5,10 +5,10 @@ import {
   validatorCompiler,
 } from 'fastify-type-provider-zod';
 import { ZodError } from 'zod';
-import { counterDb } from './CounterDatabase.js';
-import { createCountBadge } from './badge.js';
-import { registerSwagger } from './swagger.js';
-import { keyCountPair, kounterRequestSchema } from './types.js';
+import { counterDb } from './CounterDatabase.ts';
+import { createCountBadge } from './badge.ts';
+import { registerSwagger } from './swagger.ts';
+import { keyCountPair, kounterRequestSchema } from './types.ts';
 
 const app = fastify();
 

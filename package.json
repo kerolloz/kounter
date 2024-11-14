@@ -13,11 +13,11 @@
   "author": "Kerollos Magdy <contact@kerolloz.dev>",
   "license": "ISC",
   "dependencies": {
-    "@fastify/swagger": "^9.1.0",
-    "@fastify/swagger-ui": "^5.0.1",
-    "badge-maker": "^4.0.0",
-    "fastify": "^5.0.0",
-    "fastify-type-provider-zod": "^3.0.0",
+    "@fastify/swagger": "^8.14.0",
+    "@fastify/swagger-ui": "^3.0.0",
+    "badge-maker": "^3.3.1",
+    "fastify": "^4.27.0",
+    "fastify-type-provider-zod": "^1.2.0",
     "papr": "^15.2.2",
     "zod": "^3.23.8"
   },
