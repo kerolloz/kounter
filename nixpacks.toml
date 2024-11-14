@@ -1,5 +1,3 @@
 [phases.setup]
 nixpkgsArchive = '6efe194fbec6d156eedff4210476eb06bb844bc7'
-
-[start]
-cmd = "bun run start"
+nixPkgs = ['...', 'nodejs']
