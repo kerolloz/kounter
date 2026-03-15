@@ -26,7 +26,6 @@ export class CounterDatabase {
 
     this.client = await MongoClient.connect(url);
     this.papr.initialize(this.client.db());
-    await this.papr.updateSchemas();
   }
 
   async incrementCount(key: string): Promise<KeyCountPair> {
