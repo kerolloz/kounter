@@ -1,45 +1,54 @@
 import { MongoClient } from 'mongodb';
 import Papr, { schema, types } from 'papr';
-import type { TKeyCountPair } from './types';
+import type { KeyCountPair } from './types.ts';
 
-const MONGO_URL =
-  process.env.DATABASE_URL ??
-  (() => {
-    throw new Error('No DATABASE_URL found');
-  })();
+const baseSchema = schema({
+  key: types.string({ required: true }),
+  count: types.number({ required: true }),
+});
 
-const connection = await MongoClient.connect(MONGO_URL);
+type BaseSchema = (typeof baseSchema)[0];
 
-const papr = new Papr();
-papr.initialize(connection.db('kounter'));
+export class CounterDatabase {
+  private papr: Papr;
+  public client: MongoClient | null = null;
+  private countModel: ReturnType<
+    typeof Papr.prototype.model<BaseSchema, (typeof baseSchema)[1]>
+  >;
 
-const CountModel = papr.model(
-  'counters',
-  schema({
-    key: types.string({ required: true }),
-    count: types.number({ required: true }),
-  }),
-);
-
-class CounterDatabase {
-  async incrementCount(key: string): Promise<TKeyCountPair> {
-    const value = await CountModel.upsert(
-      { key },
-      {
-        $inc: { count: 1 },
-        $setOnInsert: { key, count: 1 },
-      },
-      { returnDocument: 'after' },
-    );
-    return value;
+  constructor() {
+    this.papr = new Papr();
+    this.countModel = this.papr.model('counters', baseSchema);
   }
 
-  async getCount(key: string): Promise<TKeyCountPair> {
-    const value = await CountModel.findOne({ key });
-    if (!value) {
-      return { key, count: 0 };
+  async initialize(url: string): Promise<void> {
+    if (this.client) return;
+
+    this.client = await MongoClient.connect(url);
+    this.papr.initialize(this.client.db());
+    await this.papr.updateSchemas();
+  }
+
+  async incrementCount(key: string): Promise<KeyCountPair> {
+    const doc = await this.countModel.upsert(
+      { key },
+      { $inc: { count: 1 }, $setOnInsert: { key } },
+      { returnDocument: 'after' },
+    );
+    return { key: doc.key, count: doc.count };
+  }
+
+  async getCount(key: string): Promise<KeyCountPair> {
+    const result = await this.countModel.findOne({ key });
+    if (!result) return { key, count: 0 };
+    return { key: result.key, count: result.count };
+  }
+
+  async close(): Promise<void> {
+    if (this.client) {
+      await this.client.close();
+      this.client = null;
     }
-    return value;
   }
 }
 

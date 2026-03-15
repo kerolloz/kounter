@@ -1,41 +1,37 @@
 import { z } from 'zod';
 
-export const keyCountPair = z.object({ count: z.number(), key: z.string() });
-export const kounterRequestSchema = {
-  params: z.object({
-    key: z.string().describe('The key to get the count of.'),
-  }),
-  querystring: z.object({
-    style: z
-      .enum(['flat', 'plastic', 'flat-square', 'for-the-badge', 'social'])
-      .default('flat')
-      .describe('Set the style of the badge.'),
-    label: z
-      .string()
-      .optional()
-      .describe('Set the left-hand-side text. Defaults to the key.'),
-    labelColor: z
-      .string()
-      .default('')
-      .describe('Set background color of the left part.'),
-    color: z
-      .string()
-      .default('')
-      .describe('Set background color of the right part.'),
-    cntPrefix: z
-      .string()
-      .default('')
-      .describe('The prefix to display before the counter value.'),
-    cntSuffix: z
-      .string()
-      .default('')
-      .describe('The suffix to display after the counter value.'),
-    silent: z
-      .enum(['true', 'false'])
-      .default('false')
-      .transform((v) => v === 'true')
-      .describe('Set to true to disable incrementing the counter.'),
-  }),
-};
+export const envSchema = z.object({
+  DATABASE_URL: z.string().url(),
+  PORT: z.coerce.number().default(3000),
+  NODE_ENV: z
+    .enum(['development', 'production', 'test'])
+    .default('development'),
+});
 
-export type TKeyCountPair = z.infer<typeof keyCountPair>;
+export type Env = z.infer<typeof envSchema>;
+
+export const keyCountPairSchema = z.object({
+  key: z.string().min(1),
+  count: z.number().int().nonnegative(),
+});
+
+export type KeyCountPair = z.infer<typeof keyCountPairSchema>;
+
+export const badgeQuerySchema = z.object({
+  style: z
+    .enum(['flat', 'plastic', 'flat-square', 'for-the-badge', 'social'])
+    .default('flat'),
+  label: z.string().optional(),
+  labelColor: z.string().default(''),
+  color: z.string().default(''),
+  cntPrefix: z.string().default(''),
+  cntSuffix: z.string().default(''),
+  silent: z
+    .enum(['true', 'false'])
+    .default('false')
+    .transform((v) => v === 'true'),
+});
+
+export const keyParamSchema = z.object({
+  key: z.string().min(1),
+});

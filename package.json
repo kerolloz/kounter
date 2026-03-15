@@ -11,18 +11,20 @@
   "author": "Kerollos Magdy <contact@kerolloz.dev>",
   "license": "ISC",
   "dependencies": {
-    "@fastify/swagger": "^8.14.0",
-    "@fastify/swagger-ui": "^3.0.0",
-    "badge-maker": "^3.3.1",
-    "fastify": "^4.27.0",
-    "fastify-type-provider-zod": "^1.2.0",
-    "papr": "^15.2.2",
-    "zod": "^3.23.8"
+    "@fastify/swagger": "^9.7.0",
+    "@fastify/swagger-ui": "^5.2.5",
+    "badge-maker": "^5.0.2",
+    "fastify": "^5.8.2",
+    "fastify-type-provider-zod": "^6.1.0",
+    "papr": "^17.0.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.2",
-    "typescript": "^5.6.2",
+    "@biomejs/biome": "^2.4.7",
+    "typescript": "^5.9.3",
     "@types/bun": "latest"
   },
-  "trustedDependencies": ["@biomejs/biome"]
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
 }

@@ -12,8 +12,8 @@ Use cases include a profile views counter, repository visits counter, or anythin
 
 ## Development
 
-For development, you must set the `DETA_PROJECT_KEY` environment variable to your Deta project key.  
-This project uses [Bun](bun.sh) for development.
+For development, you must set the `DATABASE_URL` environment variable to your MongoDB connection string (see `.env.example`).  
+This project uses [Bun](https://bun.sh) for development.
 
 ```bash
 bun dev
@@ -52,7 +52,7 @@ Redirects to this repository.
 - `style` - Set the style of the badge. Can be one of `flat`, `flat-square`, `for-the-badge`, or `plastic`. Defaults to `flat`.
 - `label` - Set the left-hand-side text. Defaults to `:key`.
 - `color` - Set the background of the right part (hex, rgb, rgba, hsl, hsla and css named colors supported). Defaults to `brightgreen`.
-- `labelColor` -  Set the background of the left part (hex, rgb, rgba, hsl, hsla and css named colors supported). Defaults to `grey`.
+- `labelColor` - Set the background of the left part (hex, rgb, rgba, hsl, hsla and css named colors supported). Defaults to `grey`.
 - `cntPrefix` - Set prefix to display before the counter value. Defaults to `""` empty string.
 - `cntSuffix` - Set suffix to display after the counter value. Defaults to `""` empty string.
 
@@ -62,7 +62,7 @@ Redirects to this repository.
 > ![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter)
 
 > `![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter?style=flat-square&color=blue&silent=true)`  
-> ![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter?style=flat-square&color=blue&silent=true)  
+> ![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter?style=flat-square&color=blue&silent=true)
 
 > `![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter?label=kerolloz/kounter&labelColor=white&cntPrefix=visits%20&silent=true)`  
 > ![badge](https://kounter.kerolloz.dev/badge/kerolloz.kounter?label=kerolloz/kounter&labelColor=white&cntPrefix=visits%20&silent=true)
